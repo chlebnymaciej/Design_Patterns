@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.DataAccess
 {
+	//  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+	//  Maciej Chlebny
+
+	// dodane metoda getIterator
 	public class ListNode
 	{
 		public ListNode Next { get; set; }

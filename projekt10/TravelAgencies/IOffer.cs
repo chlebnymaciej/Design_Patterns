@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.Agencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
 
+    /* 
+     * IOffer
+     * There is only two classes that implements this because
+     * TimeLeft property is telling if Offer is Pernament or Temporary
+     * according to my standard TimeLeft = -1 means that offer is pernament,
+     * if TimeLeft is 0 that means offer has expired, if TimeLeftValue is > 0
+     * that gives is How many times this offer can be still posted.
+     * 
+     * Post() method post limited or unlimited times offer on some service
+     */
     interface IOffer
     {
         int TimeLeft { get; }
@@ -27,7 +39,7 @@ namespace TravelAgencies.Agencies
         {
             this.trip = trip;
             this.photo = photos;
-            this.TimeLeft = TimeLeft;
+            this.TimeLeft = TimeLeft < -1 ? -1 : TimeLeft;
         }
 
         public void Post()
@@ -42,28 +54,20 @@ namespace TravelAgencies.Agencies
 
             if (TimeLeft == -1)
             {
-                sb.Append(trip.ToString());
-                foreach(IPhoto p in photo)
-                {
-                    sb.Append(p.ToString() + "\n");
-                }
-                sb.Append("\n ____________________\n");
                 Console.WriteLine(sb.ToString());
                 return;
             }
             if (TimeLeft == 0)
             {
-                Console.WriteLine("This offer has expired");
+                Console.WriteLine("\n========================\n");
+                Console.WriteLine("========================\n");
+                Console.WriteLine("This offer has expired\n");
+                Console.WriteLine("========================\n");
+                Console.WriteLine("========================\n");
                 return;
             }
             else
             {
-                sb.Append(trip.ToString());
-                foreach (IPhoto p in photo)
-                {
-                    sb.Append(p.ToString() + "\n");
-                }
-                sb.Append("\n ____________________\n");
                 Console.WriteLine(sb.ToString());
                 TimeLeft--;
                 return;
@@ -86,7 +90,7 @@ namespace TravelAgencies.Agencies
         {
             this.trip = trip;
             this.review = review;
-            this.TimeLeft = TimeLeft;
+            this.TimeLeft = TimeLeft < -1 ? -1 : TimeLeft;
         }
 
         public void Post()

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.DataAccess
 {
+	//  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+	//  Maciej Chlebny
+
+	// dodane metoda getIterator i typ zwraceny przez Get Iteratora
 	class TripAdvisorDatabase 
 	{
 		public Guid[] Ids;

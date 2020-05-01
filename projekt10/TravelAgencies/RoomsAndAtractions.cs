@@ -7,7 +7,13 @@ using TravelAgencies.DataAccess;
 
 namespace TravelAgencies.Agencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
 
+    /* 
+     *  Necessary classes for working program
+     *  
+     */
     public class DayTrip
     {
         public Room room { get; set; }

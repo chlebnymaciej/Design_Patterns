@@ -7,7 +7,10 @@ using TravelAgencies.Agencies;
 
 //Oyster is a website with reviews of various holiday destinations.
 namespace TravelAgencies.DataAccess
-{
+{   //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+	//  Maciej Chlebny
+
+	// dodane metoda getIterator
 	class BSTNode
 	{
 		public string Review { get; set; }

@@ -6,6 +6,20 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.DataAccess
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+    /* Singleton Pattern - because I do not think
+     * that multiple instansions of this 
+     * coders is necessary because all instanions are the same 
+     * 
+     * IDBCoders Interface contains
+     * two properties:
+     * Coder that is used for Encrypting
+     * And Decoder for opposite operation
+     * 
+     */
+
     interface IDBCoders
     {
         ICodec Coder { get;}
@@ -19,17 +33,6 @@ namespace TravelAgencies.DataAccess
         private static BookingCoder instance=null;
         private BookingCoder()
         {
-
-            DecCodec fra = new FrameCodec(2);
-            DecCodec rev = new ReverseCodec();
-            DecCodec cez = new CezarCodec(-1);
-            DecCodec swa = new SwapCodec();
-
-
-            cez.AddNextInChain(swa);
-            rev.AddNextInChain(cez);
-            fra.AddNextInChain(rev);
-
             Coder = new FrameCodec(2);
             Coder.AddNextInChain(new ReverseCodec())
                 .AddNextInChain(new CezarCodec(-1))

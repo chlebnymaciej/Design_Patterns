@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TravelAgencies.DataAccess
-{
+{   //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+	//  Maciej Chlebny
+
+	// dodane metoda getIterator i konstruktory, 
+	// bo nie chciało mi się przepisywać tych 20 linijek ciągle więc proszę o zrozumienie
 	public class PhotMetadata
 	{
 		public string Name { get; set; }

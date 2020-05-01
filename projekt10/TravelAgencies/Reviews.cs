@@ -7,6 +7,13 @@ using TravelAgencies.DataAccess;
 
 namespace TravelAgencies.Agencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+    /* 
+     *  Decorator Pattern
+     *  
+     */
     public interface IReview
     {
         string User { get; }

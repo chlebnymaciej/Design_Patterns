@@ -7,21 +7,53 @@ using TravelAgencies.Agencies;
 
 namespace projekt10.TravelAgencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+    /* 
+     *  Website implementations
+     */
     interface IWebsite
     {
         void Present();
+        void UpdateOfferList();
     }
 
     class Website : IWebsite
     {
         private int Temporary;
         private int Pernament;
-        private IEnumerable<IOffer> offers;
-        public Website(int Temp, int Perm, IEnumerable<IOffer> offers)
+        public List<IOffer> offers;
+        public List<ITravelAgency> travelAgencies;
+        public List<IAdAgency> adAgencies;
+        public Website(int Temp,
+                       int Perm,
+                       List<ITravelAgency> travelAgencies,
+                       List<IAdAgency> adAgencies,
+                       List<IOffer> off = null,
+                       int strating_number_of_offers = 10)
         {
             this.Temporary = Temp;
             this.Pernament = Perm;
-            this.offers = offers;
+            this.travelAgencies = travelAgencies;
+            this.adAgencies = adAgencies;
+            this.offers = off;
+            if (off == null)
+                this.offers = new List<IOffer>();
+            for(int i = 0;i< strating_number_of_offers;i++)
+            {
+                UpdateOfferList();
+            }
+
+        }
+
+        public void UpdateOfferList()
+        {
+            System.Random random = new Random();
+            int ta_len = travelAgencies.Count;
+            int aa_len = adAgencies.Count;
+            offers.Add(adAgencies[random.Next(0, aa_len)].CreateOffer(travelAgencies[random.Next(0, ta_len)]));
+
         }
         public void Present()
         {

@@ -6,6 +6,22 @@ using System.Threading.Tasks;
 using TravelAgencies.Agencies;
 namespace TravelAgencies.DataAccess
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+
+    /*
+     * Iterator Pattern
+     * 
+     * Interface IIterator<T>
+     * Contains methods:
+     * - bool HasNext() - tells if collection have next element
+     * - bool Next() - goes to next element return value does not
+     * tells user anything according to my standard
+     * - T Get() - returns current element, if element does not exist
+     * behavoiur is undiefined
+     * 
+     */
     interface IIterator<T>
     {
         bool HasNext();

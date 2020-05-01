@@ -7,7 +7,14 @@ using TravelAgencies.DataAccess;
 
 namespace TravelAgencies.Agencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
 
+    /* 
+     * Just one class, because I do not know how to create a 3 different classes
+     * because my program structure do not have any use case for them.
+     *  
+     */
     public interface ITrip
     {
        int Days { get; set; }
@@ -45,15 +52,19 @@ namespace TravelAgencies.Agencies
         public double GetRating()
         {
             double sum = 0.0;
+            int div = 1;
             foreach (DayTrip d in dayTrips)
             {
                 sum += double.Parse(d.room.Rating);
-
+                div++;
                 foreach (Attraction a in d.attractions)
+                {
                     sum += double.Parse(a.Rating);
+                    div++;
+                }
             }
 
-            return sum;
+            return div == 1 ? sum : sum/div;
         }
 
         public override string ToString()

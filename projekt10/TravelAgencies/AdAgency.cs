@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.Agencies
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+    /*
+     * Abstract Factory Pattern
+     * 
+     * IAdAgency - has a CreateOffer method that is using given
+     * ITravelAgency to create new IOffer
+     *  
+     */
     interface IAdAgency
     {
         IOffer CreateOffer(ITravelAgency travelAgency);

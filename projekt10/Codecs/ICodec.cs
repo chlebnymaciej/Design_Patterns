@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace TravelAgencies.DataAccess
 {
+    //  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
+    //  Maciej Chlebny
+
+    /* Decorator Patern
+     * 
+     * ICodec :
+     * Code - do some special operation
+     * Handle - Coding or Decoding given key
+     * AddNextInChain it is used to chaining Decorator - potentially dangerous!! 
+     */
     interface ICodec
     {
         string Code(string key);
